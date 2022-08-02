@@ -30,16 +30,12 @@ function addComent(){
     const commentDiv = document.getElementById('comments')
     const conteiner = document.createElement('div')
     conteiner.id = 'conteiner-comments'
-    // const span = document.createElement('span')
     const name = document.createElement('span')
     const text = document.createElement('span')
     name.innerText = 'Comment '
     name.id = 'name'
     text.innerText = comment
     text.id = 'text'
-    // span.appendChild(name)
-    // span.appendChild(text)
-    // conteiner.appendChild(span)
     conteiner.appendChild(name)
     conteiner.appendChild(text)
     commentDiv.appendChild(conteiner)
