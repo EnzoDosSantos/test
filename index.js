@@ -1,25 +1,49 @@
-
-
 const random = Math.random() * 10 + Math.random() + Math.random()
 const page = Math.floor(random)
 let value = 0
 const url = `https://picsum.photos/v2/list?page=${page}&limit=4`
-const xhr = new XMLHttpRequest()
 
-function getData(){
-    if(this.readyState === 4 && this.status === 200){
-        const data = JSON.parse(this.responseText)
-        data.map(e => {
-            const img = document.getElementById(`background${value}`)
-            img.src = e.download_url
-            value++
-        })
-    }
+async function getData() {
+    const data = await fetch(url)
+    const json = await data.json()
+    return json
 }
 
-xhr.addEventListener('readystatechange', getData)
-xhr.open('GET', url)
-xhr.send()
+getData().then(data => {
+    data.forEach(element => {
+        const img = document.getElementById(`background${value}`)
+        img.src = element.download_url
+        img.alt = element.author
+        value++
+    }
+    )
+}
+)
+
+
+// const data = await getData()
+// console.log(data)
+// data.map(e => {
+//         const img = document.getElementById(`background${value}`)
+//         const img = document.getElementById(`background${value}`)
+//         value++
+// })
+// const xhr = new XMLHttpRequest()
+
+// function getData(){
+//     if(this.readyState === 4 && this.status === 200){
+//         const data = JSON.parse(this.responseText)
+//         data.map(e => {
+//             const img = document.getElementById(`background${value}`)
+//             img.src = e.download_url
+//             value++
+//         })
+//     }
+// }
+
+// xhr.addEventListener('readystatechange', getData)
+// xhr.open('GET', url)
+// xhr.send()
 
 
 function addComent(){
