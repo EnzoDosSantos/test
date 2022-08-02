@@ -1,20 +1,20 @@
-const random = Math.random() * 10 + Math.random() + Math.random()
-const page = Math.floor(random)
-let value = 0
-const url = `https://picsum.photos/v2/list?page=${page}&limit=4`
-
-async function getData() {
-    const data = await fetch(url)
-    const json = await data.json()
-    return json
-}
-
 
 
 // Comment the lines that follow and leave them in
 // the html because otherwise the functions would not be executed.
 
 
+
+// const random = Math.random() * 10 + Math.random() + Math.random()
+// const page = Math.floor(random)
+// let value = 0
+// const url = `https://picsum.photos/v2/list?page=${page}&limit=4`
+
+// async function getData() {
+//     const data = await fetch(url)
+//     const json = await data.json()
+//     return json
+// }
 
 
 
