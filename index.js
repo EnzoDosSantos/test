@@ -9,62 +9,47 @@ async function getData() {
     return json
 }
 
-getData().then(data => {
-    data.forEach(element => {
-        const img = document.getElementById(`background${value}`)
-        img.src = element.download_url
-        img.alt = element.author
-        value++
-    }
-    )
-}
-)
 
 
-// const data = await getData()
-// console.log(data)
-// data.map(e => {
+// Comment the lines that follow and leave them in
+// the html because otherwise the functions would not be executed.
+
+
+
+
+
+
+// getData().then(data => {
+//     data.forEach(element => {
 //         const img = document.getElementById(`background${value}`)
-//         const img = document.getElementById(`background${value}`)
+//         img.src = element.download_url
+//         img.alt = element.author
 //         value++
-// })
-// const xhr = new XMLHttpRequest()
-
-// function getData(){
-//     if(this.readyState === 4 && this.status === 200){
-//         const data = JSON.parse(this.responseText)
-//         data.map(e => {
-//             const img = document.getElementById(`background${value}`)
-//             img.src = e.download_url
-//             value++
-//         })
 //     }
+//     )
 // }
-
-// xhr.addEventListener('readystatechange', getData)
-// xhr.open('GET', url)
-// xhr.send()
+// )
 
 
-function addComent(){
-    const comment = document.getElementById('comment').value
-    if(comment.length === 0){
-        return
-    }
-    const commentDiv = document.getElementById('comments')
-    const conteiner = document.createElement('div')
-    conteiner.id = 'conteiner-comments'
-    const name = document.createElement('span')
-    const text = document.createElement('span')
-    name.innerText = 'Comment '
-    name.id = 'name'
-    text.innerText = comment
-    text.id = 'text'
-    conteiner.appendChild(name)
-    conteiner.appendChild(text)
-    commentDiv.appendChild(conteiner)
-    document.getElementById('comment').value = ''
-}
+// function addComent(){
+//     const comment = document.getElementById('comment').value
+//     if(comment.length === 0){
+//         return
+//     }
+//     const commentDiv = document.getElementById('comments')
+//     const conteiner = document.createElement('div')
+//     conteiner.id = 'conteiner-comments'
+//     const name = document.createElement('span')
+//     const text = document.createElement('span')
+//     name.innerText = 'Comment '
+//     name.id = 'name'
+//     text.innerText = comment
+//     text.id = 'text'
+//     conteiner.appendChild(name)
+//     conteiner.appendChild(text)
+//     commentDiv.appendChild(conteiner)
+//     document.getElementById('comment').value = ''
+// }
 
 
 const swiper = new Swiper(".mySwiper", {

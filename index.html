@@ -89,8 +89,43 @@
         </div>
 
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    
+    <script>
+
+        let value = 0
+
+        getData().then(data => {
+        data.forEach(element => {
+            const img = document.getElementById(`background${value}`)
+            img.src = element.download_url
+            img.alt = element.author
+            value++
+        })
+    })
+
+    function addComent(){
+    const comment = document.getElementById('comment').value
+    if(comment.length === 0){
+        return
+    }
+    const commentDiv = document.getElementById('comments')
+    const conteiner = document.createElement('div')
+    conteiner.id = 'conteiner-comments'
+    const name = document.createElement('span')
+    const text = document.createElement('span')
+    name.innerText = 'Comment '
+    name.id = 'name'
+    text.innerText = comment
+    text.id = 'text'
+    conteiner.appendChild(name)
+    conteiner.appendChild(text)
+    commentDiv.appendChild(conteiner)
+    document.getElementById('comment').value = ''
+}
+
+    </script>
+    
     <script src="index.js" />
 </body>
 
